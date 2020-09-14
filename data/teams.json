@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Telstra Employees",
+        "shortName": "telstra-employees",
+        "description": "Employees who joined in August 2020",
+        "members": [
+            { "userId": { "$oid": "123456789012345678901234" }, "email": "john.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901235" }, "email": "jane.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901236" }, "email": "mark.smith@example.com" }
+        ]
+    },
+    {
+        "name": "Yay! Annual Day",
+        "shortName": "yay-annual-day",
+        "description": "Team organizing the fun events for Annual Day at Telstra",
+        "members": [
+            { "userId": { "$oid": "123456789012345678901234" }, "email": "john.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901236" }, "email": "mark.smith@example.com" }
+        ]
+    }
+]

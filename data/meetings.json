@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Training Class",
+        "description": "This is a meeting for training students in MERN stack",
+        "date": {
+            "$date": "2020-09-10T00:00:00.000Z"
+        },
+        "startTime": { "hours": 9, "minutes": 30 },
+        "endTime": { "hours": 12, "minutes": 30 },
+        "attendees": [
+            { "userId": { "$oid": "123456789012345678901234" }, "email": "john.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901235" }, "email": "jane.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901236" }, "email": "mark.smith@example.com" }
+        ]
+    },
+    {
+        "name": "Sports Discussion",
+        "description": "We will discuss the upcoming Premier League matches",
+        "date": {
+            "$date": "2020-09-11T00:00:00.000Z"
+        },
+        "startTime": { "hours": 17, "minutes": 30 },
+        "endTime": { "hours": 20, "minutes": 30 },
+        "attendees": [
+            { "userId": { "$oid": "123456789012345678901234" }, "email": "john.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901235" }, "email": "jane.doe@example.com" }
+        ]
+    },
+    {
+        "name": "HR induction",
+        "description": "Induction of the new employees",
+        "date": {
+            "$date": "2020-09-09T00:00:00.000Z"
+        },
+        "startTime": { "hours": 8, "minutes": 0 },
+        "endTime": { "hours": 9, "minutes": 30 },
+        "attendees": [
+            { "userId": { "$oid": "123456789012345678901235" }, "email": "jane.doe@example.com" },
+            { "userId": { "$oid": "123456789012345678901236" }, "email": "mark.smith@example.com" }
+        ]
+    }
+]
