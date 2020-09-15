@@ -10,14 +10,15 @@ const { authenticate } = require( '../utils/auth' );
 
 /*
     *** Sample queries ***
-    http://localhost:3000/api/calendar?date=2020-09-11&userId=123456789012345678901234
-    http://localhost:3000/api/calendar?date=2020-09-09&email=jane.doe@example.com
+    http://localhost:3000/api/calendar?date=2020-09-11
+    http://localhost:3000/api/calendar?date=2020-09-09
 */
 router.get( '/', authenticate );
 router.get( '/', function (req, res, next) {
     const date = new Date( req.query.date );
-    const userId = req.query.userId;
-    const email = req.query.email;
+    const userId = req.claims.userId;
+    // const email = req.query.email;
+    const email = req.claims.email;
 
     const filter = { date, attendees: { $elemMatch: { } } };
 

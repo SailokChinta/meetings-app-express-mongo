@@ -20,7 +20,7 @@ router.post('/login', (req, res, next) => {
                 return next( error );
             }
 
-            const claims = { email: result.email };
+            const claims = { email: result.email, userId: result._id };
         
             jwt.sign(claims, 'shh...', {expiresIn: '24h'}, function( error, token ) {
                 console.log( 'jwt token generated' );

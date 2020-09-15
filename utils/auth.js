@@ -15,6 +15,8 @@ function authenticate( req, res, next ) {
                 message: 'Go away intruder'
             });
         }
+
+        req.claims = claims;
         
         next();
     });
