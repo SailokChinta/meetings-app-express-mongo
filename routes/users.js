@@ -1,8 +1,29 @@
-var express = require('express');
-var router = express.Router();
+// Handles /api/users/...
 
+const express = require('express');
+const mongoose = require( 'mongoose' );
+
+const router = express.Router();
+const User = mongoose.model( 'User' );
+
+/*
+    *** Sample queries ***
+    http://localhost:3000/api/users
+*/
 router.get('/', function (req, res, next) {
-    res.send('respond with a resource');
+    User
+        .find()
+        .select( '-password' )
+        .sort( 'email' )
+        .exec(( error, results ) => {
+            if( error ) {
+                error.status = 500;
+                return next( error );
+            }
+
+            res.json( results );
+        });
+
 });
 
 module.exports = router;

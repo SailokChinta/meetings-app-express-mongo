@@ -1,5 +1,8 @@
 [
     {
+        "_id": {
+            "$oid": "345678901234567890123412"
+        },
         "name": "Training Class",
         "description": "This is a meeting for training students in MERN stack",
         "date": {
@@ -14,6 +17,9 @@
         ]
     },
     {
+        "_id": {
+            "$oid": "345678901234567890123413"
+        },
         "name": "Sports Discussion",
         "description": "We will discuss the upcoming Premier League matches",
         "date": {
@@ -27,6 +33,9 @@
         ]
     },
     {
+        "_id": {
+            "$oid": "345678901234567890123414"
+        },
         "name": "HR induction",
         "description": "Induction of the new employees",
         "date": {

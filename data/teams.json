@@ -1,5 +1,8 @@
 [
     {
+        "_id": {
+            "$oid": "234567890123456789012341"
+        },
         "name": "Telstra Employees",
         "shortName": "telstra-employees",
         "description": "Employees who joined in August 2020",
@@ -10,6 +13,9 @@
         ]
     },
     {
+        "_id": {
+            "$oid": "234567890123456789012342"
+        },
         "name": "Yay! Annual Day",
         "shortName": "yay-annual-day",
         "description": "Team organizing the fun events for Annual Day at Telstra",

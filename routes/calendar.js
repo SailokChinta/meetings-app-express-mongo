@@ -6,11 +6,14 @@ const mongoose = require( 'mongoose' );
 const router = express.Router();
 const Meeting = mongoose.model( 'Meeting' );
 
+const { authenticate } = require( '../utils/auth' );
+
 /*
     *** Sample queries ***
     http://localhost:3000/api/calendar?date=2020-09-11&userId=123456789012345678901234
     http://localhost:3000/api/calendar?date=2020-09-09&email=jane.doe@example.com
 */
+router.get( '/', authenticate );
 router.get( '/', function (req, res, next) {
     const date = new Date( req.query.date );
     const userId = req.query.userId;
