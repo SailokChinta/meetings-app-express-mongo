@@ -1,3 +1,4 @@
+require( 'dotenv' ).config();
 require('./data/init');
 
 var createError = require('http-errors');

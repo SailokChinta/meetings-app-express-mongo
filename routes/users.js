@@ -6,10 +6,13 @@ const mongoose = require( 'mongoose' );
 const router = express.Router();
 const User = mongoose.model( 'User' );
 
+const { authenticate } = require( '../utils/auth' );
+
 /*
     *** Sample queries ***
     http://localhost:3000/api/users
 */
+router.get( '/', authenticate );
 router.get('/', function (req, res, next) {
     User
         .find()

@@ -7,17 +7,20 @@ const router = express.Router();
 const User = mongoose.model( 'User' );
 const Meeting = mongoose.model( 'Meeting' );
 
+const { authenticate } = require( '../utils/auth' );
+
 /*
     *** Sample queries ***
     http://localhost:3000/api/meetings?period=all&userId=123456789012345678901234&email=john.doe@example.com
     http://localhost:3000/api/meetings?period=all&userId=123456789012345678901234
     http://localhost:3000/api/meetings?period=past&email=john.doe@example.com
 */
+router.get( '/', authenticate );
 router.get( '/', function (req, res, next) {
     const period = req.query.period.toLowerCase();
     const search = req.query.search;
-    const userId = req.query.userId;
-    const email = req.query.email;
+    const userId = req.claims.userId;
+    const email = req.claims.email;
 
     const filter = { date: { }, attendees: { $elemMatch: { } } };
 
@@ -69,10 +72,11 @@ router.get( '/', function (req, res, next) {
     *** Sample queries ***
     http://localhost:3000/api/meetings/345678901234567890123413?action=add_attendee&userId=123456789012345678901236&email=mark.smith@example.com
 */
+router.patch( '/:id', authenticate );
 router.patch( '/:id', function(req, res, next) {
     const action = req.query.action
-    const userId = req.query.userId;
-    const email = req.query.email;
+    const userId = req.claims.userId;
+    const email = req.claims.email;
     
     const meetingId = req.params.id;
     

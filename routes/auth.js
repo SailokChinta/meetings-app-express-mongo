@@ -15,9 +15,15 @@ router.post('/login', (req, res, next) => {
     User
         .findOne( credentials )
         .exec(( error, result ) => {
-            if( error || Object.keys( result ).length === 0 ) {
-                error.status = 403;
-                return next( error );
+            if( error || !result || typeof result !== 'object' || Object.keys( result ).length === 0 ) {
+                if( error ) {
+                    error.status = 403;
+                    return next( error );
+                } else {
+                    const error = new Error( 'unknown db error' );
+                    error.status = 500;
+                    return next( error );
+                }
             }
 
             const claims = { email: result.email, userId: result._id };
